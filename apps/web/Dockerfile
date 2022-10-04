@@ -1,5 +1,10 @@
+
+# "Base Image" - Start from a base OS
 FROM node:alpine AS builder
+
+# Package manager for alpine - like apt-get on ubuntu systems.
 RUN apk update
+
 # Set working directory
 WORKDIR /app
 RUN yarn global add turbo
@@ -19,7 +24,7 @@ RUN yarn install
 
 # Build the project
 ARG MY_OTHER_VAR
-ENV MY_OTHER_VAR=$MY_OTHER_VAR
+
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
 RUN yarn turbo run build --filter=web...

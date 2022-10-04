@@ -7,7 +7,4 @@ module.exports = withTM({
   experimental: {
     outputFileTracingRoot: path.join(__dirname, "../../"),
   },
-  env: {
-    MY_OTHER_VAR: process.env.MY_OTHER_VAR,
-  },
 });
