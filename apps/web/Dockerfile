@@ -4,6 +4,7 @@
 FROM node:alpine AS builder
 
 ARG NEXT_PUBLIC_API_HOST
+ENV NEXT_PUBLIC_API_HOST=$NEXT_PUBLIC_API_HOST
 
 RUN apk update
 # Set working directory
