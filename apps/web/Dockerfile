@@ -1,5 +1,3 @@
-ARG NEXT_PUBLIC_API_HOST
-
 FROM node:alpine AS builder
 RUN apk update
 # Set working directory
@@ -20,6 +18,8 @@ COPY --from=builder /app/out/yarn.lock ./yarn.lock
 RUN yarn install
 
 # Build the project
+ARG MY_OTHER_VAR
+ENV MY_OTHER_VAR=$MY_OTHER_VAR
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
 RUN yarn turbo run build --filter=web...

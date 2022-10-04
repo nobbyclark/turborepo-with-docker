@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Button } from "ui";
 
-const API_HOST = process.env.NEXT_PUBLIC_API_HOST || "http://localhost:3001";
+const API_HOST = "http://localhost:3001";
 
-console.log('api host');
-console.log(process.env.NEXT_PUBLIC_API_HOST);
+console.log('MY_OTHER_VAR');
+console.log(process.env.MY_OTHER_VAR);
 
 export default function Web() {
   const [name, setName] = useState<string>("");
@@ -38,7 +38,7 @@ export default function Web() {
 
   return (
     <div>
-      <h1>Web</h1>
+      <h1>{process.env.MY_OTHER_VAR}</h1>
       <form onSubmit={onSubmit}>
         <label htmlFor="name">Name </label>
         <input

@@ -4,7 +4,7 @@
     "build": {
       "outputs": ["dist/**", ".next/**", "public/dist/**"],
       "dependsOn": ["^build"],
-      "env": ["NEXT_PUBLIC_API_HOST", "MY_VAR"]
+      "env": ["MY_OTHER_VAR", "MY_VAR"]
     },
     "test": {
       "outputs": ["coverage/**"],
