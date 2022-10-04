@@ -1,6 +1,8 @@
 # This Dockerfile is copy-pasted into our main docs at /docs/handbook/deploying-with-docker.
 # Make sure you update both files!
 
+ARG MY_VAR
+
 FROM node:alpine AS builder
 RUN apk update
 # Set working directory

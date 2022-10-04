@@ -3,8 +3,8 @@
   "pipeline": {
     "build": {
       "outputs": ["dist/**", ".next/**", "public/dist/**"],
-      "dependsOn": ["^build", "$NEXT_PUBLIC_API_HOST"],
-      "env": ["NEXT_PUBLIC_API_HOST"]
+      "dependsOn": ["^build"],
+      "env": ["NEXT_PUBLIC_API_HOST", "MY_VAR"]
     },
     "test": {
       "outputs": ["coverage/**"],

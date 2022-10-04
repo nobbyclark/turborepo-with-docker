@@ -1,9 +1,10 @@
 # This Dockerfile is copy-pasted into our main docs at /docs/handbook/deploying-with-docker.
 # Make sure you update both files!
 
+FROM node:alpine AS builder
+
 ARG NEXT_PUBLIC_API_HOST
 
-FROM node:alpine AS builder
 RUN apk update
 # Set working directory
 WORKDIR /app
