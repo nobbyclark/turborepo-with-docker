@@ -3,6 +3,9 @@ import { Button } from "ui";
 
 const API_HOST = process.env.NEXT_PUBLIC_API_HOST || "http://localhost:3001";
 
+console.log('api host');
+console.log(process.env.NEXT_PUBLIC_API_HOST);
+
 export default function Web() {
   const [name, setName] = useState<string>("");
   const [response, setResponse] = useState<{ message: string } | null>(null);
