@@ -47,4 +47,4 @@ COPY --from=installer /app/apps/web/package.json .
 # COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next/standalone ./
 # COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next/static ./apps/web/.next/static
 
-CMD ["node_modules/.bin/next", "start"]
+CMD ["apps/web/node_modules/.bin/next", "start"]
